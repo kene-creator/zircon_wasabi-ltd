@@ -1,0 +1,79 @@
+.navbar_container {
+  padding: 0 5rem 0 5rem;
+  background-color: #fff;
+  height: 5rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  text-decoration: none;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  color: #062a54;
+}
+
+.logo_img {
+  width: 1.3rem;
+  margin: 0 0.5rem 0 0;
+}
+
+.form_search {
+  position: relative;
+  width: 11.3rem;
+}
+
+.form_search_input {
+  padding: 0.8rem 2rem 1rem 0.25rem;
+  outline: none;
+}
+
+.btn_search {
+  position: absolute;
+  top: 0.45rem;
+  right: 0.8rem;
+  height: 2rem;
+  width: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.search_icon {
+  fill: #8796a7;
+  width: 1.3rem;
+  height: 1.3rem;
+}
+
+.nav_list {
+  list-style: none;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.nav_list li {
+  margin-right: 1rem;
+  font-size: 0.8rem;
+}
+
+.nav_list li a {
+  text-decoration: none;
+  color: #062a54;
+  font-weight: 500;
+}
+
+.nav_active {
+  color: #0079d2 !important;
+}
+
+.arrow {
+  fill: #062a54;
+  width: 2rem;
+  height: 2rem;
+  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+  -moz-transform: rotate(-90deg);
+  -ms-transform: rotate(-90deg);
+  -o-transform: rotate(-90deg);
+}
