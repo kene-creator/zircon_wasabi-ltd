@@ -1,7 +1,13 @@
-import "./App.css";
+import Navbar from './components/Navbar';
+import HeadInformation from './components/HeadInformation';
 
 function App() {
-  return <div>HEllo World</div>;
+  return (
+    <>
+      <Navbar />
+      <HeadInformation />
+    </>
+  );
 }
 
 export default App;
