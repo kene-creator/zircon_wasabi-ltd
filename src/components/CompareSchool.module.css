@@ -20,3 +20,57 @@
   border-bottom: 2px solid #0079d2;
   padding-bottom: 4px;
 }
+
+.schools {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 1rem auto 0 auto;
+}
+
+.hide_all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid #f0f4f8;
+  padding: 2rem 0.5rem 0.5rem 0.5rem;
+}
+
+.file_img {
+  width: 7rem;
+  height: 7rem;
+}
+
+.hide_text {
+  font-size: 1rem;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.school_tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid #f0f4f8;
+  padding: 1rem;
+  width: 12rem;
+  height: 12rem;
+}
+
+.school_img {
+  width: 12rem;
+  height: 9rem;
+  border-radius: 0.3rem;
+  -webkit-border-radius: 0.3rem;
+  -moz-border-radius: 0.3rem;
+  -ms-border-radius: 0.3rem;
+  -o-border-radius: 0.3rem;
+}
+
+.school_name {
+  font-size: 1rem;
+  font-weight: 500;
+  font-family: 'Quicksand', sans-serif;
+}

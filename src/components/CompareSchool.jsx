@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import styles from './CompareSchool.module.css';
+import file from '../assets/files.png';
+import frame from '../assets/frame.png';
 
 const CompareSchools = () => {
   const [active, setActive] = useState('ACADEMIC STATS');
@@ -36,6 +38,37 @@ const CompareSchools = () => {
             </li>
           ))}
         </ul>
+      </div>
+      <div className={styles.schools}>
+        <div className={styles.hide_all}>
+          <img src={file} alt="" className={styles.file_img} />
+          <form action="" className="flex_center">
+            <input type="checkbox" />
+            <p className={`ml_sm ${styles.hide_text}`}>Hide all features</p>
+          </form>
+        </div>
+        <div>
+          <div className={styles.school_tag}>
+            <img src={school1.image} alt="" className={styles.school_img} />
+            <p className={`ml_sm ${styles.school_name}`}>{school1.name}</p>
+          </div>
+        </div>
+        <div>
+          <div className={styles.school_tag}>
+            <img src={school2.image} alt="" className={styles.school_img} />
+            <p className={`ml_sm ${styles.school_name}`}>{school2.name}</p>
+          </div>
+        </div>
+        <div>
+          <div className={styles.school_tag}>
+            <img src={frame} alt="" className={styles.school_img} />
+          </div>
+        </div>
+        <div>
+          <div className={styles.school_tag}>
+            <img src={frame} alt="" className={styles.school_img} />
+          </div>
+        </div>
       </div>
     </div>
   );
