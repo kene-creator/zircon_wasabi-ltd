@@ -1,19 +1,22 @@
+.section_compare {
+  margin: 3rem 0 0 0;
+}
+
 .rating_list {
   list-style: none;
   font-family: 'Quicksand', sans-serif;
 }
 
 .rating_list li {
-  margin-right: 1rem;
+  margin-right: 4rem;
   font-size: 0.8rem;
-}
-
-.rating_list li a {
-  text-decoration: none;
   color: #062a54;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .rating_active {
   color: #0079d2 !important;
+  border-bottom: 2px solid #0079d2;
+  padding-bottom: 4px;
 }
