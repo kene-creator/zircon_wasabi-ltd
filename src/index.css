@@ -16,6 +16,10 @@ body {
   align-items: center;
 }
 
+.flex_col {
+  flex-direction: column;
+}
+
 .ml_sm {
   margin-left: 1rem;
 }
