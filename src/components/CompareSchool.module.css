@@ -1,0 +1,19 @@
+.rating_list {
+  list-style: none;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.rating_list li {
+  margin-right: 1rem;
+  font-size: 0.8rem;
+}
+
+.rating_list li a {
+  text-decoration: none;
+  color: #062a54;
+  font-weight: 500;
+}
+
+.rating_active {
+  color: #0079d2 !important;
+}
