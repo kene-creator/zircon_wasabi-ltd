@@ -3,6 +3,7 @@ import { v4 as uuidv4 } from 'uuid';
 import styles from './CompareSchool.module.css';
 import file from '../assets/files.png';
 import frame from '../assets/frame.png';
+import SchoolData from './SchoolData';
 
 const CompareSchools = () => {
   const [active, setActive] = useState('ACADEMIC STATS');
@@ -70,6 +71,7 @@ const CompareSchools = () => {
           </div>
         </div>
       </div>
+      <SchoolData />
     </div>
   );
 };
