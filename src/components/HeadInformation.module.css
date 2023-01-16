@@ -25,11 +25,13 @@
   box-sizing: border-box;
   outline: none;
   margin: 3rem auto 0 auto;
+  border: 1px solid #ccdaea;
+  border-radius: 4px;
 }
 
 .btn_search {
   position: absolute;
-  top: 3.4rem;
+  top: 3.2rem;
   right: 0.8rem;
   height: 2rem;
   width: 2rem;

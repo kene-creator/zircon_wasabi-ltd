@@ -1,6 +1,8 @@
-import { v4 as uuidv4 } from 'uuid';
+import styles from './SchoolData.module.css';
 
-const SchoolData = () => {
+const SchoolData = (props) => {
+  const { visible } = props;
+
   const tableBodyArray = {
     'FINDEET RATING': {
       'STUDENT-TEACHER RATIO': {
@@ -77,77 +79,85 @@ const SchoolData = () => {
   const keySchoolStat = Object.entries(tableBodyArray)[1][1];
   const academicStat = Object.entries(tableBodyArray)[2][1];
   const feeStructure = Object.entries(tableBodyArray)[3][1];
-  console.log(keySchoolStat);
 
   return (
-    <table>
-      <thead>
-        <tr>
-          <th></th>
-          <th>School 1</th>
-          <th>School 2</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th>FINDEET RATING</th>
-        </tr>
-        {/* <tr className="flex_col flex_center">
-          {Object.keys(findeetRating).map((key1) => (
-            <>
-              <tr>
-                <th>{key1}</th>
+    <>
+      {!visible && (
+        <table className={styles.contianer}>
+          <tbody className={styles.table_body}>
+            <tr>
+              <th className={styles.table_name}>FINDEET RATING</th>
+            </tr>
+            {Object.keys(findeetRating).map((key1, i) => (
+              <tr
+                key={key1}
+                className={`${i % 2 ? styles.bg_dark : styles.bg_light}`}
+              >
+                <th className={`${styles.school_information}`}>{key1}</th>
                 {Object.keys(findeetRating[key1]).map((key2) => (
-                  <td>{`${findeetRating[key1][key2]}`}</td>
+                  <td key={key2} className={styles.school_data}>
+                    {`${findeetRating[key1][key2]}`}
+                    <td>r</td>
+                  </td>
                 ))}
               </tr>
-            </>
-          ))}
-        </tr> */}
-        {Object.keys(findeetRating).map((key1) => (
-          <tr key={key1}>
-            <th>{key1}</th>
-            {Object.keys(findeetRating[key1]).map((key2) => (
-              <td key={key2}>{`${findeetRating[key1][key2]}`}</td>
             ))}
-          </tr>
-        ))}
 
-        <tr>
-          <th>KEY SCHOOL STATS</th>
-        </tr>
-        {Object.keys(keySchoolStat).map((key1) => (
-          <tr key={key1}>
-            <th>{key1}</th>
-            {Object.keys(keySchoolStat[key1]).map((key2) => (
-              <td key={key2}>{`${keySchoolStat[key1][key2]}`}</td>
+            <tr>
+              <th className={styles.table_name}>KEY SCHOOL STATS</th>
+            </tr>
+            {Object.keys(keySchoolStat).map((key1, i) => (
+              <tr
+                key={key1}
+                className={`${i % 2 ? styles.bg_dark : styles.bg_light}`}
+              >
+                <th className={`${styles.school_information}`}>{key1}</th>
+                {Object.keys(keySchoolStat[key1]).map((key2) => (
+                  <td
+                    key={key2}
+                    className={styles.school_data}
+                  >{`${keySchoolStat[key1][key2]}`}</td>
+                ))}
+              </tr>
             ))}
-          </tr>
-        ))}
-        <tr>
-          <th>ACADEMIC STATS</th>
-        </tr>
-        {Object.keys(academicStat).map((key1) => (
-          <tr key={key1}>
-            <th>{key1}</th>
-            {Object.keys(academicStat[key1]).map((key2) => (
-              <td key={key2}>{`${academicStat[key1][key2]}`}</td>
+            <tr>
+              <th className={styles.table_name}>ACADEMIC STATS</th>
+            </tr>
+            {Object.keys(academicStat).map((key1, i) => (
+              <tr
+                key={key1}
+                className={`${i % 2 ? styles.bg_dark : styles.bg_light}`}
+              >
+                <th className={`${styles.school_information}`}>{key1}</th>
+                {Object.keys(academicStat[key1]).map((key2) => (
+                  <td
+                    key={key2}
+                    className={styles.school_data}
+                  >{`${academicStat[key1][key2]}`}</td>
+                ))}
+              </tr>
             ))}
-          </tr>
-        ))}
-        <tr>
-          <th>FEE STRUCTURE</th>
-        </tr>
-        {Object.keys(feeStructure).map((key1) => (
-          <tr key={key1}>
-            <th>{key1}</th>
-            {Object.keys(feeStructure[key1]).map((key2) => (
-              <td key={key2}>{`${feeStructure[key1][key2]}`}</td>
+            <tr>
+              <th className={styles.table_name}>FEE STRUCTURE</th>
+            </tr>
+            {Object.keys(feeStructure).map((key1, i) => (
+              <tr
+                key={key1}
+                className={`${i % 2 ? styles.bg_dark : styles.bg_light}`}
+              >
+                <th className={`${styles.school_information}`}>{key1}</th>
+                {Object.keys(feeStructure[key1]).map((key2) => (
+                  <td
+                    key={key2}
+                    className={styles.school_data}
+                  >{`${feeStructure[key1][key2]}`}</td>
+                ))}
+              </tr>
             ))}
-          </tr>
-        ))}
-      </tbody>
-    </table>
+          </tbody>
+        </table>
+      )}
+    </>
   );
 };
 

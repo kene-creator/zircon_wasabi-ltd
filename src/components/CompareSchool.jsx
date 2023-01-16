@@ -7,6 +7,7 @@ import SchoolData from './SchoolData';
 
 const CompareSchools = () => {
   const [active, setActive] = useState('ACADEMIC STATS');
+  const [isChecked, setIsChecked] = useState(false);
 
   const links = [
     'FINDEET RATING',
@@ -15,6 +16,12 @@ const CompareSchools = () => {
     'TEACHER STATS',
     'FEE STRUCTURE'
   ];
+
+  function handleCheckboxChange(event) {
+    setIsChecked(event.target.checked);
+  }
+
+  console.log(isChecked);
 
   const school1 = {
     name: 'Deal School District',
@@ -44,7 +51,11 @@ const CompareSchools = () => {
         <div className={styles.hide_all}>
           <img src={file} alt="" className={styles.file_img} />
           <form action="" className="flex_center">
-            <input type="checkbox" />
+            <input
+              type="checkbox"
+              onChange={handleCheckboxChange}
+              checked={isChecked}
+            />
             <p className={`ml_sm ${styles.hide_text}`}>Hide all features</p>
           </form>
         </div>
@@ -71,7 +82,7 @@ const CompareSchools = () => {
           </div>
         </div>
       </div>
-      <SchoolData />
+      <SchoolData visible={isChecked} />
     </div>
   );
 };
