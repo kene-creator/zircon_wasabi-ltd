@@ -1,4 +1,5 @@
 import styles from './SchoolData.module.css';
+import check from '../assets/check.png';
 
 const SchoolData = (props) => {
   const { visible } = props;
@@ -75,85 +76,75 @@ const SchoolData = (props) => {
       }
     }
   };
-  const findeetRating = Object.entries(tableBodyArray)[0][1];
-  const keySchoolStat = Object.entries(tableBodyArray)[1][1];
-  const academicStat = Object.entries(tableBodyArray)[2][1];
-  const feeStructure = Object.entries(tableBodyArray)[3][1];
 
+  const isNumber = (value) => {
+    return !isNaN(value) && typeof Number(value) === 'number' && value !== '';
+  };
+
+  const findy = (a, b) => {
+    if (a > b) {
+      return (
+        <>
+          <td className={styles.school_data}>
+            {a}
+            <div className={styles.check}>
+              <img src={check} alt="check mark" />
+            </div>
+          </td>
+          <td className={styles.school_data}>{b}</td>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <td className={styles.school_data}>{a}</td>
+          <td className={styles.school_data}>
+            {b}
+            <div className={styles.check}>
+              <img src={check} alt="check mark" />
+            </div>
+          </td>
+        </>
+      );
+    }
+  };
+
+  console.log(typeof Object.entries(tableBodyArray)[0][0]);
   return (
     <>
       {!visible && (
         <table className={styles.contianer}>
           <tbody className={styles.table_body}>
-            <tr>
-              <th className={styles.table_name}>FINDEET RATING</th>
-            </tr>
-            {Object.keys(findeetRating).map((key1, i) => (
-              <tr
-                key={key1}
-                className={`${i % 2 ? styles.bg_dark : styles.bg_light}`}
-              >
-                <th className={`${styles.school_information}`}>{key1}</th>
-                {Object.keys(findeetRating[key1]).map((key2) => (
-                  <td key={key2} className={styles.school_data}>
-                    {`${findeetRating[key1][key2]}`}
-                    <td>r</td>
-                  </td>
-                ))}
-              </tr>
-            ))}
-
-            <tr>
-              <th className={styles.table_name}>KEY SCHOOL STATS</th>
-            </tr>
-            {Object.keys(keySchoolStat).map((key1, i) => (
-              <tr
-                key={key1}
-                className={`${i % 2 ? styles.bg_dark : styles.bg_light}`}
-              >
-                <th className={`${styles.school_information}`}>{key1}</th>
-                {Object.keys(keySchoolStat[key1]).map((key2) => (
-                  <td
-                    key={key2}
-                    className={styles.school_data}
-                  >{`${keySchoolStat[key1][key2]}`}</td>
-                ))}
-              </tr>
-            ))}
-            <tr>
-              <th className={styles.table_name}>ACADEMIC STATS</th>
-            </tr>
-            {Object.keys(academicStat).map((key1, i) => (
-              <tr
-                key={key1}
-                className={`${i % 2 ? styles.bg_dark : styles.bg_light}`}
-              >
-                <th className={`${styles.school_information}`}>{key1}</th>
-                {Object.keys(academicStat[key1]).map((key2) => (
-                  <td
-                    key={key2}
-                    className={styles.school_data}
-                  >{`${academicStat[key1][key2]}`}</td>
-                ))}
-              </tr>
-            ))}
-            <tr>
-              <th className={styles.table_name}>FEE STRUCTURE</th>
-            </tr>
-            {Object.keys(feeStructure).map((key1, i) => (
-              <tr
-                key={key1}
-                className={`${i % 2 ? styles.bg_dark : styles.bg_light}`}
-              >
-                <th className={`${styles.school_information}`}>{key1}</th>
-                {Object.keys(feeStructure[key1]).map((key2) => (
-                  <td
-                    key={key2}
-                    className={styles.school_data}
-                  >{`${feeStructure[key1][key2]}`}</td>
-                ))}
-              </tr>
-            ))}
+            {Object.entries(tableBodyArray).map((i, e) => {
+              return (
+                <>
+                  <tr key={e}>
+                    <th className={styles.table_name}>{i[0]}</th>
+                  </tr>
+                  {Object.entries(i[1]).map((v, k) => {
+                    return (
+                      <tr className={styles.bg_light} key={k}>
+                        <th className={`${styles.school_information}`}>
+                          {v[0]}
+                        </th>
+                        {isNumber(v[1].school1) && isNumber(v[1].school2) ? (
+                          <>{findy(v[1].school1, v[1].school2)}</>
+                        ) : (
+                          <>
+                            <td className={styles.school_data}>
+                              {v[1].school1}{' '}
+                            </td>
+                            <td className={styles.school_data}>
+                              {v[1].school2}
+                            </td>
+                          </>
+                        )}
+                      </tr>
+                    );
+                  })}
+                </>
+              );
+            })}
           </tbody>
         </table>
       )}
