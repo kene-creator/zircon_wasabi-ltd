@@ -23,3 +23,7 @@ body {
 .ml_sm {
   margin-left: 1rem;
 }
+
+.inline_block {
+  display: inline-block;
+}

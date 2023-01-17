@@ -20,17 +20,23 @@
 .form_search {
   position: relative;
   width: 11.3rem;
+  margin-right: 1rem;
 }
 
 .form_search_input {
-  padding: 0.8rem 2rem 1rem 0.25rem;
+  padding: 0.8rem 2rem 1rem 0.8rem;
   outline: none;
+  width: 12rem;
+  box-sizing: border-box;
+  border: 1px solid #ccdaea;
+  border-radius: 4px;
+  font-size: 1rem;
 }
 
 .btn_search {
   position: absolute;
   top: 0.45rem;
-  right: 0.8rem;
+  right: 0rem;
   height: 2rem;
   width: 2rem;
   display: flex;
