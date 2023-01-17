@@ -119,11 +119,18 @@ const SchoolData = (props) => {
               return (
                 <>
                   <tr key={e}>
-                    <th className={styles.table_name}>{i[0]}</th>
+                    <th className={styles.table_name} id={i[0]}>
+                      {i[0]}
+                    </th>
                   </tr>
                   {Object.entries(i[1]).map((v, k) => {
                     return (
-                      <tr className={styles.bg_light} key={k}>
+                      <tr
+                        className={
+                          k % 2 === 0 ? styles.bg_light : styles.bg_dark
+                        }
+                        key={k}
+                      >
                         <th className={`${styles.school_information}`}>
                           {v[0]}
                         </th>

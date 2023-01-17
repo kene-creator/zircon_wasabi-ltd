@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-scroll';
 import { v4 as uuidv4 } from 'uuid';
 import styles from './CompareSchool.module.css';
 import file from '../assets/files.png';
@@ -37,13 +38,18 @@ const CompareSchools = () => {
       <div>
         <ul className={`flex_center ${styles.rating_list}`}>
           {links.map((link) => (
-            <li
+            <Link
+              to={link}
+              spy={true}
+              smooth={true}
+              offset={-230}
+              duration={500}
               key={uuidv4()}
               className={`${active === link ? styles.rating_active : ''}`}
               onClick={() => setActive(link)}
             >
               {link}
-            </li>
+            </Link>
           ))}
         </ul>
       </div>
