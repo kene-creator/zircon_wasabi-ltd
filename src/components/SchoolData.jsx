@@ -78,11 +78,11 @@ const SchoolData = (props) => {
   };
 
   const isNumber = (value) => {
-    return !isNaN(value) && typeof Number(value) === 'number' && value !== '';
+    return value !== '' && !isNaN(value);
   };
 
   const findy = (a, b) => {
-    if (a > b) {
+    if (Math.ceil(a) > Math.ceil(b)) {
       return (
         <>
           <td className={styles.school_data}>
