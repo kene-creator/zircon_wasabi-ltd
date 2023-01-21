@@ -5,6 +5,7 @@
 ## Built With
 
 - React
+- CSS Modules
 
 ## Live Link
 
