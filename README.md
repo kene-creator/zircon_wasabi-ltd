@@ -6,6 +6,7 @@
 
 - React
 - CSS Modules
+- npm
 
 ## Live Link
 
